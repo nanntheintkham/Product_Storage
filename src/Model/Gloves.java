@@ -1,10 +1,10 @@
 package Model;
 
-public class Gloves extends Equipment {
+public class Gloves extends Product {
     private final String size;
 
-    public Gloves(int safetyLevel, int numberOfItems, String size) {
-        super(safetyLevel, numberOfItems);
+    public Gloves(double price, int numberOfItems, String size) {
+        super(price, numberOfItems);
         this.size = size;
     }
 

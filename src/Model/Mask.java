@@ -1,10 +1,10 @@
 package Model;
 
-public class Mask extends Equipment {
+public class Mask extends Product {
     private final String attachmentType;
 
-    public Mask(int safetyLevel, int numberOfItems, String attachmentType) {
-        super(safetyLevel, numberOfItems);
+    public Mask(double price, int numberOfItems, String attachmentType) {
+        super(price, numberOfItems);
         this.attachmentType = attachmentType;
     }
 

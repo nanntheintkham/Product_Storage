@@ -8,6 +8,10 @@ public class Notebook extends Product{
         this.pages = pages;
     }
 
+    public int getPages() {
+        return pages;
+    }
+
     @Override
     public String toString() {
         return  super.toString() + ", number of pages: " + pages + "}";

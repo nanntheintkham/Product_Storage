@@ -1,16 +1,11 @@
 package Model;
 
-import java.lang.reflect.Field;
+import java.awt.*;
 import java.util.*;
 
 public class Storage<T> implements Iterable<T>{
-    private ArrayList<T> items = new ArrayList<>();
-    int Maxsize;
-
-
-    public int getSize() {
-        return Maxsize;
-    }
+    protected ArrayList<T> items = new ArrayList<>();
+    int Maxsize = 20;
 
     public void setMaxsize(int maxsize) {
         Maxsize = maxsize;
@@ -20,8 +15,21 @@ public class Storage<T> implements Iterable<T>{
         this.Maxsize = Maxsize;
     }
 
+    public Storage() {
+    }
+
+
     public void addItem(T item) {
-        items.add(item);
+        if(item == null){
+            throw new IllegalArgumentException("Item cannot be null");
+        }
+        else if (isFull()){
+            System.out.println("Storage is full!");
+        }
+        else{
+            items.add(item);
+        }
+
     }
 
     public boolean isFull(){
@@ -30,14 +38,6 @@ public class Storage<T> implements Iterable<T>{
             return true;
         }
         return false;
-    }
-
-    public void remove(T item) {
-        items.remove(item);
-    }
-
-    public void clear() {
-        items.clear();
     }
 
     public void display() {
@@ -57,7 +57,5 @@ public class Storage<T> implements Iterable<T>{
     public Iterator<T> iterator() {
         return items.iterator();
     }
-
-
 }
 
